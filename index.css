@@ -1,0 +1,99 @@
+:root {
+  --body-bg: #202020;
+  --btn-gradient: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  --btn-txt-color: #ffffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--body-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.btn {
+  position: relative;
+  border: none;
+  outline: none;
+  display: block;
+  height: max-content;
+}
+
+.btn-animate {
+  border-radius: 5px;
+}
+
+.btn-animate:hover {
+  cursor: pointer;
+}
+
+.btn-animate span {
+  display: block;
+}
+
+.btn-animate span:nth-child(1) {
+  padding: 2rem 6.5rem;
+  background-image: var(--btn-gradient);
+  border-radius: 5px;
+}
+
+.btn-animate span:nth-child(2),
+.btn-animate span:nth-child(3),
+.btn-animate span:nth-child(4) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-animate span:nth-child(4) {
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: var(--btn-gradient);
+  color: var(--btn-txt-color);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.5rem;
+  transition: all .3s ease;
+  border-radius: 1px;
+}
+
+.btn-animate:hover span:nth-child(4) {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.btn-animate span:nth-child(3) {
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  background-color: var(--body-bg);
+  border-radius: 4px;
+}
+
+.btn-animate span:nth-child(2) {
+  height: 60%;
+  width: 120%;
+  background-color: var(--body-bg);
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+}
